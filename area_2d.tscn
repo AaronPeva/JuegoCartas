@@ -1,0 +1,141 @@
+[gd_scene load_steps=9 format=3 uid="uid://17716x6unwkm"]
+
+[ext_resource type="Texture2D" uid="uid://2jueuhcnxq0b" path="res://df82v9j-676d4761-c532-4bbe-81eb-1e87214c98ab.png" id="1_eieqm"]
+[ext_resource type="Script" path="res://control.gd" id="1_j8el8"]
+[ext_resource type="Texture2D" uid="uid://mr3x1kdmegnp" path="res://aa.jpg" id="2_bp7ee"]
+[ext_resource type="Script" path="res://button.gd" id="3_1yekk"]
+[ext_resource type="Script" path="res://progress_bar.gd" id="3_jomhs"]
+[ext_resource type="Texture2D" uid="uid://ch3rvlr42k67k" path="res://image.png" id="4_c0n1n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t2aw3"]
+bg_color = Color(0.791234, 0, 0.123005, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ag12f"]
+bg_color = Color(0.141486, 0.723797, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.0962048, 0.0962047, 0.0962047, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j8el8")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 1153.0
+offset_bottom = 649.0
+texture = ExtResource("1_eieqm")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.0
+offset_top = -204.0
+offset_right = 159.0
+offset_bottom = 148.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="enemy" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_bp7ee")
+expand_mode = 4
+
+[node name="vida" type="ProgressBar" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_t2aw3")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ag12f")
+value = 100.0
+script = ExtResource("3_jomhs")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -2.0
+offset_top = -1.0
+offset_right = 3.0
+offset_bottom = 89.0
+grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 25.0
+offset_top = -2.0
+offset_right = -28.0
+offset_bottom = 75.0
+grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 36
+text = "Player"
+
+[node name="ProgressBar" type="ProgressBar" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_t2aw3")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ag12f")
+value = 100.0
+
+[node name="Panel2" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -106.0
+offset_right = 1.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+anchor_left = 1.05208
+anchor_top = -0.029321
+anchor_right = 0.164931
+anchor_bottom = 0.104938
+offset_left = 23.0
+offset_top = 78.0
+offset_right = 1127.0
+offset_bottom = 86.0
+icon_alignment = 1
+script = ExtResource("3_1yekk")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Button"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0731707
+anchor_top = -0.0842105
+anchor_right = -0.0731707
+anchor_bottom = -0.0842105
+offset_left = -714.0
+offset_top = 445.0
+offset_right = -620.0
+offset_bottom = 583.0
+texture = ExtResource("4_c0n1n")
+expand_mode = 1
